@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1520</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Real Time Saliency (Tobii)</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="btnCalibrate">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>201</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calibrate</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblEyeScene">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>480</width>
+      <height>270</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>320</width>
+      <height>240</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>EyeScene</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblSal1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>490</y>
+      <width>480</width>
+      <height>270</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>320</width>
+      <height>240</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>lblSal1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblCurrSavePath">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>160</y>
+      <width>411</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Check to append date to save name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_CalibrateStatus">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>20</y>
+      <width>211</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>NOT CALIBRATED</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSaliencyOnOff">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>201</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Saliency ON/OFF</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSaveOnOff">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>201</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save ON/OFF</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_SalOnOff">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>70</y>
+      <width>51</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>OFF</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_SaveOnOff">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>120</y>
+      <width>61</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>OFF</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineSaveName">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>120</y>
+      <width>291</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>subject1</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSetSaveLocation">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>120</y>
+      <width>191</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Set Save Name</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnConnect">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>10</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Connect</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineIPAddr">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>10</y>
+      <width>211</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>192.168.71.50</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_IPAddrConn">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>50</y>
+      <width>211</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>NOT CONNECTED</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxVideo">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>90</y>
+      <width>126</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Video</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxAudio">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>120</y>
+      <width>126</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Audio</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxEyeTracking">
+    <property name="geometry">
+     <rect>
+      <x>1200</x>
+      <y>150</y>
+      <width>201</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Eye Tracking</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="sal1CBox">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>760</y>
+      <width>291</width>
+      <height>29</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="sal5CBox">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>640</y>
+      <width>291</width>
+      <height>29</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="sal2CBox">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>400</y>
+      <width>291</width>
+      <height>29</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblSal2">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>210</y>
+      <width>320</width>
+      <height>180</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>320</width>
+      <height>180</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>Sal2</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="sal3CBox">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>400</y>
+      <width>291</width>
+      <height>29</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblSal5">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>450</y>
+      <width>320</width>
+      <height>180</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>320</width>
+      <height>180</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>Sal5</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblSal4">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>450</y>
+      <width>320</width>
+      <height>180</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>320</width>
+      <height>180</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>Sal4</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="sal6CBox">
+    <property name="geometry">
+     <rect>
+      <x>1190</x>
+      <y>400</y>
+      <width>291</width>
+      <height>29</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblSal3">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>210</y>
+      <width>320</width>
+      <height>180</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>320</width>
+      <height>180</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>Sal3</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="sal4CBox">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>640</y>
+      <width>291</width>
+      <height>29</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblSal6">
+    <property name="geometry">
+     <rect>
+      <x>1190</x>
+      <y>210</y>
+      <width>320</width>
+      <height>180</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>320</width>
+      <height>180</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>Sal6</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblFps">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>760</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FPS</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelFPSlabel">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>760</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sal FPS:</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxSal1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>760</y>
+      <width>71</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pretty</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxSal2">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>400</y>
+      <width>21</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxSal3">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>400</y>
+      <width>21</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxSal6">
+    <property name="geometry">
+     <rect>
+      <x>1480</x>
+      <y>400</y>
+      <width>21</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxSal4">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>640</y>
+      <width>21</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxSal5">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>640</y>
+      <width>21</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnConnectToFile">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>758</y>
+      <width>123</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Connect from File</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_ConnFromFile">
+    <property name="geometry">
+     <rect>
+      <x>1135</x>
+      <y>771</y>
+      <width>381</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Filename</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxAppendDate">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>160</y>
+      <width>21</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxToggleTime">
+    <property name="geometry">
+     <rect>
+      <x>1490</x>
+      <y>730</y>
+      <width>21</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxToggleEyepos">
+    <property name="geometry">
+     <rect>
+      <x>1490</x>
+      <y>700</y>
+      <width>21</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelChooseSalModel_3">
+    <property name="geometry">
+     <rect>
+      <x>1307</x>
+      <y>705</y>
+      <width>181</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Show eyepos on salmaps</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelChooseSalModel_4">
+    <property name="geometry">
+     <rect>
+      <x>1309</x>
+      <y>733</y>
+      <width>181</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Show time on salmaps</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxToggleNames">
+    <property name="geometry">
+     <rect>
+      <x>1490</x>
+      <y>671</y>
+      <width>21</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelChooseSalModel_5">
+    <property name="geometry">
+     <rect>
+      <x>1308</x>
+      <y>676</y>
+      <width>181</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Show name on salmaps</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="salModelComboBox">
+    <property name="geometry">
+     <rect>
+      <x>991</x>
+      <y>727</y>
+      <width>291</width>
+      <height>29</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelChooseSalModel">
+    <property name="geometry">
+     <rect>
+      <x>992</x>
+      <y>707</y>
+      <width>181</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Choose Saliency Model</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="verticalSlider_alpha">
+    <property name="geometry">
+     <rect>
+      <x>1486</x>
+      <y>610</y>
+      <width>29</width>
+      <height>47</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>75</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelChooseSalModel_6">
+    <property name="geometry">
+     <rect>
+      <x>1340</x>
+      <y>624</y>
+      <width>143</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Salmap alpha blend</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnStartFromFile">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>911</x>
+      <y>758</y>
+      <width>99</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start from File</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelROClabel">
+    <property name="geometry">
+     <rect>
+      <x>548</x>
+      <y>760</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sal ROC:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblROC">
+    <property name="geometry">
+     <rect>
+      <x>617</x>
+      <y>761</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ROC AUC</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnRecomputeTrial">
+    <property name="geometry">
+     <rect>
+      <x>761</x>
+      <y>758</y>
+      <width>115</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Recompute Trial</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
